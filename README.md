@@ -3,22 +3,21 @@
 
 
 # Background
-/n
+
 A growing number of funds claim to be making sustainable investments, while investors are concerned about the risks associated with greenwashing due to the current lack of measurable standards in this area. Although there are several ESG scoring metrics proposed by rating agencies , these data are very scarce and expensive and the sources are often not transparent or objective enough, which sets a very high barrier for investors and greatly hinders relevant investments.
-/n
+
 We believe that NLP could be useful in ESG investment strategy analysis, as such information is often presented in textual form in prospectuses, related news reports, and speeches. NLP can enhance ESG investing in a variety of ways. For example, NLP enables the large-scale tracking of controversies. Also, NLP can be combined with graph analytics to extract key strategic ESG initiatives and learn companies’ relationships in a global market and their impact on market risk calculations (Amend, A Data-driven Approach to Environmental, Social and Governance, 2020). (Vamvourellis, Toth, Desai, Mehta, & Pasquali, 2022)
-/n
+
 
 # Methodology and Findings
 
 In this project, we attempted to classify mutual funds by utilizing the FinBERT model. Then, we explored the trend of esg investment development based on the classification results. Additionally, we tried to perform feature extracting and topic modeling from the texts to construct a new ESG investment strategy taxonomy.
-/n
+
 
 ## 1. Labelling and Building Database
 
-/n
 We pulled data from the table derived_sec_fund_characteristic in database common_goods to construct our own database. This table contains raw texts extracted from 13-F files. After filtering out the Null&NaN data, we can get 1600 files submitted by 1436 funds covering reporting periods from 2015 Q4 to 2022 Q2. After removing the duplicates, we get a sample of 6519 observations. This is a relatively small sample with many highly resemble objective and strategies description (Amend, A Data-driven Approach to Environmental, Social and Governance, 2020)ns, suggesting that we should use Zero-Shot-Learning or Few-Shot-Learning techniques in the classification. Also, we contacted the cleaned text string of objective and strategy to power the analysis. 
-/n
+
 Next, the ESG-FinBERT model  pertained by researchers at HKUST is adopted to label the contacted objectives and strategies strings. The model could classify raw text into 9 categories: Climate Change, Pollution & Waste, Corporate Governance, Natural Capital, Product Liability, Human Capital, Business Ethics &Values, Community Relations and Non-ESG. According to researchers, their pretrained ESG-FinBERT model outperforms other NLP models when doing ESG classification, especially when training on smaller text samples containing financial words that are not commonly used in general texts. (Huang, Wang, & Yang, 2022) Another study (Pasch & Ehnes, 2022) also shows preference for BERT model when doing ESG classification tasks. However, this model is not perfect since is pre-trained, which means we should bear with the inflexibility. And though both researches mentioned that the models used were trained on ESG-related corpus, mainly news and listed companies’ ESG reports, our corpus does not necessarily feature overlapping features. To get better classification results, we should have fine-tuned the pretrained model.
 /n
 The labelled data was stored in our database as table fund_objectives_strategy_with_labels in database common_goods (Table 1).
