@@ -20,6 +20,7 @@ We pulled data from the table derived_sec_fund_characteristic in database common
 Next, the ESG-FinBERT model  pertained by researchers at HKUST is adopted to label the contacted objectives and strategies strings. The model could classify raw text into 9 categories: Climate Change, Pollution & Waste, Corporate Governance, Natural Capital, Product Liability, Human Capital, Business Ethics &Values, Community Relations and Non-ESG. According to researchers, their pretrained ESG-FinBERT model outperforms other NLP models when doing ESG classification, especially when training on smaller text samples containing financial words that are not commonly used in general texts. (Huang, Wang, & Yang, 2022) Another study (Pasch & Ehnes, 2022) also shows preference for BERT model when doing ESG classification tasks. However, this model is not perfect since is pre-trained, which means we should bear with the inflexibility. And though both researches mentioned that the models used were trained on ESG-related corpus, mainly news and listed companies’ ESG reports, our corpus does not necessarily feature overlapping features. To get better classification results, we should have fine-tuned the pretrained model.
 
 The labelled data was stored in our database as table fund_objectives_strategy_with_labels in database common_goods.
+
 <table class="MsoTable15Plain2" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none">
  <tbody><tr style="height:14.65pt">
   <td width="228" style="width:170.9pt;border-top:solid black 1.5pt;border-left:
@@ -190,7 +191,526 @@ In terms of ESG-labelled funds, we see trends similar to the ESG strategy mentio
 
 ### *2.3 leaders in esg investments.*
 
-We then look at some the top names in ESG investing. We get the first movers’ names. Corporate Governance strategies are not inspected since they are much more general strategies. We can see that most of the ESG-related strategies start from 2016 (Table 3). 
+We then look at some the top names in ESG investing. We get the first movers’ names. Corporate Governance strategies are not inspected since they are much more general strategies. We can see that most of the ESG-related strategies start from 2016.
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="99%" style="width:99.24%;border-collapse:collapse">
+ <thead>
+  <tr style="height:13.85pt">
+   <td width="104" nowrap="" style="width:78.0pt;border-top:solid black 1.5pt;
+   border-left:none;border-bottom:solid black 1.5pt;border-right:none;
+   padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Labels</span></b></p>
+   </td>
+   <td width="85" nowrap="" style="width:63.8pt;border-top:solid black 1.5pt;
+   border-left:none;border-bottom:solid black 1.5pt;border-right:none;
+   padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">CIK</span></b></p>
+   </td>
+   <td width="359" nowrap="" style="width:269.3pt;border-top:solid black 1.5pt;
+   border-left:none;border-bottom:solid black 1.5pt;border-right:none;
+   padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Fund Name</span></b></p>
+   </td>
+   <td width="49" nowrap="" style="width:36.45pt;border-top:solid black 1.5pt;
+   border-left:none;border-bottom:solid black 1.5pt;border-right:none;
+   padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Year</span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tbody><tr style="height:13.85pt">
+  <td width="104" nowrap="" rowspan="14" style="width:78.0pt;border:none;border-bottom:
+  solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Climate Change</span></p>
+  </td>
+  <td width="85" nowrap="" style="width:63.8pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1579982</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">ARK ETF TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1738074</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">BLACKROCK FUNDS IV</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">110055</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">BLACKROCK SUSTAINABLE
+  BALANCED FUND, INC.</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1324285</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">BLACKROCK UNCONSTRAINED
+  EQUITY FUND</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1121624</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">CALVERT IMPACT FUND INC</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1831313</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">ENGINE NO. 1 ETF TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1467831</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">ETF MANAGERS TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">917124</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">FIRSTHAND FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">877232</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">GREEN CENTURY FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1100663</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">ISHARES TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1095726</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">NATIXIS FUNDS TRUST IV</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1506001</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">NEUBERGER BERMAN ETF TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1209466</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">POWERSHARES EXCHANGE TRADED
+  FUND TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1168164</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">SPDR INDEX SHARES FUNDS
+  (FORMERLY STREETTRACKS INDEX SHARES FUNDS)</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="104" nowrap="" rowspan="12" style="width:78.0pt;border:none;border-bottom:
+  solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Community Relations</span></p>
+  </td>
+  <td width="85" nowrap="" style="width:63.8pt;border:none;border-top:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1811168</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;border:none;border-top:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2ND VOTE FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;border:none;border-top:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">914775</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">ADVANTAGE FUNDS, INC.</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">766285</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">AMANA MUTUAL FUNDS TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1872555</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">CATHOLIC RESPONSIBLE
+  INVESTMENTS FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1026977</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">CITY NATIONAL ROCHDALE FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">707823</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">FIDELITY MT VERNON STREET
+  TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1645194</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">LEGG MASON ETF INVESTMENT
+  TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1489215</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">MIRAE ASSET DISCOVERY FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">795259</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">MUTUAL OF AMERICA INVESTMENT
+  CORP</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1481686</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">NILE CAPITAL INVESTMENT
+  TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1141819</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">TRUST FOR PROFESSIONAL
+  MANAGERS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1785243</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">UNCOMMON INVESTMENT FUNDS
+  TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="104" nowrap="" rowspan="6" style="width:78.0pt;border:none;border-bottom:
+  solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Human Capital</span></p>
+  </td>
+  <td width="85" nowrap="" style="width:63.8pt;border:none;border-top:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1377031</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;border:none;border-top:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">EPIPHANY FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;border:none;border-top:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2017</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1748425</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">GABELLI ETFS TRUST</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2017</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1821080</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">HUMANKIND BENEFIT CORP</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2017</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1722388</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">IMPACT SHARES TRUST I</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2017</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">923184</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">MATTHEWS INTERNATIONAL FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2017</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.85pt">
+  <td width="85" nowrap="" style="width:63.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">747546</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">PARNASSUS FUNDS</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2017</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.4pt">
+  <td width="104" nowrap="" style="width:78.0pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">Natural Capital</span></p>
+  </td>
+  <td width="85" nowrap="" style="width:63.8pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">1121624</span></p>
+  </td>
+  <td width="359" nowrap="" style="width:269.3pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.4pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">CALVERT IMPACT FUND INC</span></p>
+  </td>
+  <td width="49" nowrap="" style="width:36.45pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif;color:black">2016</span></p>
+  </td>
+ </tr>
+</tbody></table>
 
 BlackRock is leading in investing Climate Change both in terms of time and number of funds. But in a broader definition, we cannot see any funds is in a significantly leading position. We may need a more specific taxonomy with more dimensions to evaluate the funds’ performance.
 
@@ -198,7 +718,86 @@ BlackRock is leading in investing Climate Change both in terms of time and numbe
 
 Considering the scarcity of samples, we are not able to train the model by large amount of labeled data. So, in this section, we tried to utilize PCA and LDA models to extract features from the text and model topics.
 
-After preliminary cleaning in section 1, the strings still need to be further lemmatized and tokenized. We only keep nouns and adjectives in our case. Also, we want to drop words that occur too frequently or too infrequently, because these word tokens are highly likely be extracted if not dropped but they are either meaningless or not significant for our classifier. So, we count the word frequency first. As indicated by the statistical data of word frequency, the distribution of count of words is extremely left-skewed and fat-tailed with most of the word appears for less than 100 times in the string (Table 4). </br> <img src="img/fundtradingwithineachesglabel.png"> Therefore, we dropped words with counts above 500 or below 5, 1536 words in total.
+After preliminary cleaning in section 1, the strings still need to be further lemmatized and tokenized. We only keep nouns and adjectives in our case. Also, we want to drop words that occur too frequently or too infrequently, because these word tokens are highly likely be extracted if not dropped but they are either meaningless or not significant for our classifier. So, we count the word frequency first. As indicated by the statistical data of word frequency, the distribution of count of words is extremely left-skewed and fat-tailed with most of the word appears for less than 100 times in the string.
+
+<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" width="42%" style="width:42.26%;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="95" style="width:70.9pt;border-top:solid black 1.5pt;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center;line-height:115%"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Metric</span></b></p>
+  </td>
+  <td width="160" style="width:119.7pt;border-top:solid black 1.5pt;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center;line-height:115%"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Value</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">nobs</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;border:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">3064</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">min</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">max</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">12771</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">mean</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">69.09</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">variance</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">158767.35</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">skewness</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">18.33</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="95" style="width:70.9pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="text-indent:8.9pt;line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">kurtosis</span></p>
+  </td>
+  <td width="160" style="width:119.7pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="right" style="margin-right:14.4pt;text-align:right;
+  line-height:115%"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">450.57</span></p>
+  </td>
+ </tr>
+</tbody></table>
+</br> <img src="img/fundtradingwithineachesglabel.png"> Therefore, we dropped words with counts above 500 or below 5, 1536 words in total.
 
 </br> <img src="img/wordcloud.png">
 
@@ -210,7 +809,230 @@ As the we don’t preset the raw texts and the dimensionality of raw dataset is 
 
 Then, we clustered the reduced word vectors by K-means. Two criterions is recorded to evaluate the model, Calinski and Harabaz score  and SSE. Calinski and Harabaz score is also known as the Variance Ratio Criterion. The score is defined as ratio of the sum of between-cluster dispersion and of within-cluster dispersion. So, we would pick the model with the highest possible score. Our score graph is concave. The score is high when the number of clusters is small and drops dramatically before the number of clusters rises to 20. </br> <img src="img/kmeanschscore.png">  On the other hand, SSE keeps decreasing when number of clusters rises from 1 to 20, with a short plateau period at 8-9. </br> <img src="img/sse.png"> Therefore, we set the number of K-means clusters to 8 and labeled the strategies accordingly. The K-means labels are integers from 0-8. Cluster 3 is the largest, with 461 observations, accounted for more than half of the last_entry samples. Cluster 5 is the second largest, with 173 observations and Cluster 4 follows with 89 observations. 
 
-Compared to labels assigned by ESG-FinBERT the K-means labels are more diluted while they also get many overlaps. All the observations in Cluster 0, 2 and 6 fall into Corporate Governance category under ESG-FinBERT. Most of the observations in Cluster 3, 5 are also Corporate Governance labeled, which re-confirms our previous conclusion that the Corporate Governance label is not of great significance. Look the other way around, Corporate Governance strategies are primarily grouped into categories 3 and 5, as there are a bunch of strategies labeled as Community Relations within the same clusters, which may indicate that Corporate Governance and Community Relations are corelated topics.(Table 6) </br> <img src="img/jointlabelcount.png">
+Compared to labels assigned by ESG-FinBERT the K-means labels are more diluted while they also get many overlaps. All the observations in Cluster 0, 2 and 6 fall into Corporate Governance category under ESG-FinBERT. Most of the observations in Cluster 3, 5 are also Corporate Governance labeled, which re-confirms our previous conclusion that the Corporate Governance label is not of great significance. Look the other way around, Corporate Governance strategies are primarily grouped into categories 3 and 5, as there are a bunch of strategies labeled as Community Relations within the same clusters, which may indicate that Corporate Governance and Community Relations are corelated topics.
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="99%" style="width:99.02%;border-collapse:collapse">
+ <thead>
+  <tr>
+   <td width="33%" style="width:33.34%;border-top:solid black 1.5pt;border-left:
+   none;border-bottom:solid black 1.5pt;border-right:none;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">K-means Cluster</span></b></p>
+   </td>
+   <td style="border-top:solid black 1.5pt;border-left:none;border-bottom:solid black 1.5pt;
+   border-right:none;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">ESG Label</span></b></p>
+   </td>
+   <td width="37%" style="width:37.2%;border-top:solid black 1.5pt;border-left:
+   none;border-bottom:solid black 1.5pt;border-right:none;padding:.75pt .75pt .75pt .75pt">
+   <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Observations</span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tbody><tr>
+  <td width="33%" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">0</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right;word-break:break-all"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">40</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" rowspan="2" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">33</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Climate Change</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">11</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">2</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">25</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" rowspan="4" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">3</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">438</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Community Relations</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">13</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Climate Change</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">6</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Human Capital</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">4</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" rowspan="5" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">4</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">81</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Community Relations</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Climate Change</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">4</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Natural Capital</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Human Capital</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">2</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" rowspan="2" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">5</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">172</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Human Capital</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" style="width:33.34%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">6</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">33</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="33%" rowspan="3" style="width:33.34%;border:none;border-bottom:solid black 1.5pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">7</span></p>
+  </td>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Corporate Governance</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">21</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.0pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Community Relations</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.0pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border:none;border-bottom:solid black 1.5pt;padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="right" style="text-align:right"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Climate Change</span></p>
+  </td>
+  <td width="37%" style="width:37.2%;border:none;border-bottom:solid black 1.5pt;
+  padding:3.0pt 6.0pt 3.0pt 6.0pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">1</span></p>
+  </td>
+ </tr>
+</tbody></table>
+</br> <img src="img/jointlabelcount.png">
 
 Lastly, we performed LDA in attempt to categorizing the feature words. There are two evaluation metrics od LDA model: perplexity and coherence score. Coherence score measures score a single topic by measuring the degree of semantic similarity between high scoring words in the topic. In the analysis, the model with the highest coherence score is selected as the optimal model. (Kapadia, 2019). As shown by the training record, the optimal model is when there are only 2 topics (Figure 16). Details will not be covered in this report as the result  is not insightful enough, i.e., we cannot see any prominent theme of the two topics.
 
