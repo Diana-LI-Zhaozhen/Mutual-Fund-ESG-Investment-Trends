@@ -1,3 +1,7 @@
+# Mutual-Fund-ESG-Investment-Trends
+📕HKU Mfft 21'fall-Big Data. Contributors: Diana LI @Diana-LI-Zhaozhen, Peng Pengxin. We were trying to find ESG investment trends by applying basic EDA on the prospectus of mutual funds in the States. The project and the course was instructed by Dr. Alan Kwan.
+
+
 # Background
 
 A growing number of funds claim to be making sustainable investments, while investors are concerned about the risks associated with greenwashing due to the current lack of measurable standards in this area. Although there are several ESG scoring metrics proposed by rating agencies , these data are very scarce and expensive and the sources are often not transparent or objective enough, which sets a very high barrier for investors and greatly hinders relevant investments.
@@ -15,7 +19,153 @@ We pulled data from the table derived_sec_fund_characteristic in database common
 
 Next, the ESG-FinBERT model  pertained by researchers at HKUST is adopted to label the contacted objectives and strategies strings. The model could classify raw text into 9 categories: Climate Change, Pollution & Waste, Corporate Governance, Natural Capital, Product Liability, Human Capital, Business Ethics &Values, Community Relations and Non-ESG. According to researchers, their pretrained ESG-FinBERT model outperforms other NLP models when doing ESG classification, especially when training on smaller text samples containing financial words that are not commonly used in general texts. (Huang, Wang, & Yang, 2022) Another study (Pasch & Ehnes, 2022) also shows preference for BERT model when doing ESG classification tasks. However, this model is not perfect since is pre-trained, which means we should bear with the inflexibility. And though both researches mentioned that the models used were trained on ESG-related corpus, mainly news and listed companies’ ESG reports, our corpus does not necessarily feature overlapping features. To get better classification results, we should have fine-tuned the pretrained model.
 
-The labelled data was stored in our database as table fund_objectives_strategy_with_labels in database common_goods (Table 1).
+The labelled data was stored in our database as table fund_objectives_strategy_with_labels in database common_goods.
+<table class="MsoTable15Plain2" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none">
+ <tbody><tr style="height:14.65pt">
+  <td width="228" style="width:170.9pt;border-top:solid black 1.5pt;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">N<b>ame</b></span></p>
+  </td>
+  <td width="186" style="width:139.2pt;border-top:solid black 1.5pt;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Data Type</span></b></p>
+  </td>
+  <td width="208" style="width:155.75pt;border-top:solid black 1.5pt;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Description</span></b></p>
+  </td>
+ </tr>
+ <tr style="height:14.1pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">adsh</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Filing id, SEC Accession No.</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.65pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">cik_expanded</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">The Central Index Key (CIK)</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.65pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">name</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Fund name</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.1pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">period_end_date</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(Int32)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Reporting period end date</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.65pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">year</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Int32</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Reporting period year</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.1pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">objective</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Objective narrative</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.65pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">strategy</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Strategy narrative</span></p>
+  </td>
+ </tr>
+ <tr style="height:14.1pt">
+  <td width="228" style="width:170.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">cleaned_objective_strategy</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.1pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Contacted string of cleaned </span></p>
+  </td>
+ </tr>
+ <tr style="height:14.65pt">
+  <td width="228" style="width:170.9pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><b><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">esg_labels</span></b></p>
+  </td>
+  <td width="186" style="width:139.2pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">Nullable(String)</span></p>
+  </td>
+  <td width="208" style="width:155.75pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.65pt">
+  <p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:&quot;Garamond&quot;,serif">ESG labels assigned by ESG FinBERT
+  model.</span></p>
+  </td>
+ </tr>
+</tbody></table>
 
 
 ## 2. Exploratory Data Analysis
@@ -49,6 +199,8 @@ BlackRock is leading in investing Climate Change both in terms of time and numbe
 Considering the scarcity of samples, we are not able to train the model by large amount of labeled data. So, in this section, we tried to utilize PCA and LDA models to extract features from the text and model topics.
 
 After preliminary cleaning in section 1, the strings still need to be further lemmatized and tokenized. We only keep nouns and adjectives in our case. Also, we want to drop words that occur too frequently or too infrequently, because these word tokens are highly likely be extracted if not dropped but they are either meaningless or not significant for our classifier. So, we count the word frequency first. As indicated by the statistical data of word frequency, the distribution of count of words is extremely left-skewed and fat-tailed with most of the word appears for less than 100 times in the string (Table 4). </br> <img src="img/fundtradingwithineachesglabel.png"> Therefore, we dropped words with counts above 500 or below 5, 1536 words in total.
+
+</br> <img src="img/wordcloud.png">
 
 From the above word cloud, we can see catchy words and phrases such as: interest rate, credit default, depository receipt, swap, benchmark, environmental government agency, real estate, retirement, postretirement, yield, revenue, balance sheet, quantitative, etc. The most frequent 50 words are not all ESG-related but more of traditional fund management. </br> <img src="img/wordfrequency_tfidf.png"> 
 
