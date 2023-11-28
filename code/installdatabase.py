@@ -33,8 +33,8 @@ def clickhouse_query(query):
 #class server
 
 # username
-user='class'
-password = 'alanisthecoolest123'
+user='#username'
+password = '#password'
 
 '''
 # read the password
@@ -55,7 +55,7 @@ def class_clickhouse_query(query):
     # read a file that contains the password
     # report timings
     start_time = pd.Timestamp.now()
-    db_con = clickhouse_driver.Client(host='147.8.113.116', port=29000, user=user,
+    db_con = clickhouse_driver.Client(host='', port=, user=user,
                                     password=password,
                                         database='crsp',
                                         settings={'use_numpy': True})
@@ -70,7 +70,7 @@ def class_clickhouse_query(query):
     return df2
 #%%
 #class mysql server
-def mysql_query(query,user=user, password=password, host='jarvis.workisboring.com', port=3306):
+def mysql_query(query,user=user, password=password, host='', port=):
     # start time
     start_time = time.time()
 
