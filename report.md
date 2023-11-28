@@ -1,7 +1,3 @@
-# Mutual-Fund-ESG-Investment-Trends
-📕HKU Mfft 21'fall-Big Data. Contributors: Diana LI @Diana-LI-Zhaozhen, Peng Pengxin. We were trying to find ESG investment trends by applying basic EDA on the prospectus of mutual funds in the States. The project and the course was instructed by Dr. Alan Kwan.
-
-
 # Background
 
 A growing number of funds claim to be making sustainable investments, while investors are concerned about the risks associated with greenwashing due to the current lack of measurable standards in this area. Although there are several ESG scoring metrics proposed by rating agencies , these data are very scarce and expensive and the sources are often not transparent or objective enough, which sets a very high barrier for investors and greatly hinders relevant investments.
@@ -76,13 +72,13 @@ Given higher requirements on accuracy and granularity, we should use more labele
 
 *References*
 
-Amend, A. (2020, July 10). A Data-driven Approach to Environmental, Social and Governance. Retrieved from databricks: https://www.databricks.com/blog/2020/07/10/a-data-driven-approach-to-environmental-social-and-governance.html /n
+Amend, A. (2020, July 10). A Data-driven Approach to Environmental, Social and Governance. Retrieved from databricks: https://www.databricks.com/blog/2020/07/10/a-data-driven-approach-to-environmental-social-and-governance.html <br />
 Amend, A. (n.d.). ESG - reports. Retrieved from databricks: https://www.databricks.com/notebooks/esg_notebooks/01_esg_report.html
-edgetrader. (n.d.). esg-nlp. Retrieved from GitHub: https://github.com/edgetrader/esg-nlp /n
-Huang, A. H., Wang, H., & Yang, Y. (2022). FinBERT: A Large Language Model for Extracting Information from Financial Text. Contemporary Accounting Research. /n
-Kapadia, S. (2019, August 19). Evaluate Topic Models: Latent Dirichlet Allocation (LDA). Retrieved from Medium: https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d0 /n
-Pasch, S., & Ehnes, D. (2022). NLP for Responsible Finance: Fine-Tuning Transformer-Based Models for ESG. IEEE International Conference on Big Data (Big Data), (pp. 3532-3536). /n
-US SIF. (2023). Sustainable Investing Basics. Retrieved from https://www.ussif.org/sribasics /n
-Vamvourellis, D., Toth, A. M., Desai, D., Mehta, D., & Pasquali, S. (2022). Learning Mutual Fund Categorization using Natural Language Processing. Third ACM International Conference on AI in Finance, (pp. 87-95). /n
-yiyanghkust/finbert-esg-9-categories. (n.d.). Retrieved from Hugging Face: https://huggingface.co/yiyanghkust/finbert-esg-9-categories /n
+edgetrader. (n.d.). esg-nlp. Retrieved from GitHub: https://github.com/edgetrader/esg-nlp <br />
+Huang, A. H., Wang, H., & Yang, Y. (2022). FinBERT: A Large Language Model for Extracting Information from Financial Text. Contemporary Accounting Research. <br />
+Kapadia, S. (2019, August 19). Evaluate Topic Models: Latent Dirichlet Allocation (LDA). Retrieved from Medium: https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d0 <br />
+Pasch, S., & Ehnes, D. (2022). NLP for Responsible Finance: Fine-Tuning Transformer-Based Models for ESG. IEEE International Conference on Big Data (Big Data), (pp. 3532-3536). <br />
+US SIF. (2023). Sustainable Investing Basics. Retrieved from https://www.ussif.org/sribasics <br />
+Vamvourellis, D., Toth, A. M., Desai, D., Mehta, D., & Pasquali, S. (2022). Learning Mutual Fund Categorization using Natural Language Processing. Third ACM International Conference on AI in Finance, (pp. 87-95). <br />
+yiyanghkust/finbert-esg-9-categories. (n.d.). Retrieved from Hugging Face: https://huggingface.co/yiyanghkust/finbert-esg-9-categories <br />
 
